@@ -329,7 +329,7 @@ let create_dir_if_not_exist = abs_path =>
  * marshaled_schema: the absolute path of marshaled schema
  */
 
-let ppx_cache_dir = ".graphql_ppx_cache/";
+let ppx_cache_dir = ".graphql_ppx7_cache/";
 
 let get_ppx_cache_path = (suffix, relative_to) => {
   let dir =
