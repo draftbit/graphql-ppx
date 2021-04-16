@@ -180,7 +180,7 @@ let mapper = (_config, _cookies) => {
           ...default_mapper,
           module_expr: (mapper, mexpr) =>
             switch (mexpr) {
-            | {pmod_desc: Pmod_extension(({txt: "graphql", loc}, pstr)), _} =>
+            | {pmod_desc: Pmod_extension(({txt: "graphql7", loc}, pstr)), _} =>
               switch (pstr) {
               | PStr([
                   {
