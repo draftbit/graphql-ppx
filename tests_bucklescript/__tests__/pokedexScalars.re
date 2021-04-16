@@ -1,4 +1,4 @@
-module MyQuery = [%graphql
+module MyQuery = [%graphql7
   {|
     query pokemon($id: String, $name: String) {
       pokemon(name: $name, id: $id) {

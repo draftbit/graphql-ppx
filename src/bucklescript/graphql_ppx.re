@@ -238,7 +238,7 @@ let mapper = (_config, _cookies) => {
                   Location.Error(
                     Location.error(
                       ~loc,
-                      "[%graphql] accepts a string, e.g. [%graphql {| { query |}]",
+                      "[%graphql7] accepts a string, e.g. [%graphql7 {| { query |}]",
                     ),
                   ),
                 )
@@ -313,5 +313,5 @@ let args = [
 
 let () =
   Migrate_parsetree.(
-    Driver.register(~name="graphql", ~args, Versions.ocaml_408, mapper)
+    Driver.register(~name="graphql7", ~args, Versions.ocaml_408, mapper)
   );

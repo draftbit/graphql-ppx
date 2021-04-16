@@ -1,6 +1,6 @@
 open Test_shared;
 
-module MyQuery = [%graphql
+module MyQuery = [%graphql7
   {|
   query ($arg: RecursiveInput!) {
     recursiveInput(arg: $arg)

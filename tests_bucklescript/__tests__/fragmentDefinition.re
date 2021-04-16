@@ -13,7 +13,7 @@ let concat = ({nullableOfNullable, nullableOfNonNullable}) => {
   Belt.Array.concat(x, y);
 };
 
-module Fragments = [%graphql
+module Fragments = [%graphql7
   {|
   fragment listFragment on Lists {
     nullableOfNullable
@@ -27,7 +27,7 @@ module Fragments = [%graphql
 |}
 ];
 
-module MyQuery = [%graphql
+module MyQuery = [%graphql7
   {|
   query {
     l1: lists {

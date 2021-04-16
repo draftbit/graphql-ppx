@@ -115,7 +115,7 @@ type hero = {
   mass: number
 };
 
-module HeroQuery = [%graphql {|
+module HeroQuery = [%graphql7 {|
 {
   hero @bsRecord {
     name
@@ -138,7 +138,7 @@ string to properly fit a record type (see above), you can use the `@bsDecoder`
 directive to insert a custom function in the decoder:
 
 ```reason
-module HeroQuery = [%graphql {|
+module HeroQuery = [%graphql7 {|
 {
   hero {
     name
@@ -159,7 +159,7 @@ above, where you _either_ get a user _or_ a list of errors - you can add a
 `@bsVariant` directive to the field to turn it into a polymorphic variant:
 
 ```reason
-module SignUpQuery = [%graphql
+module SignUpQuery = [%graphql7
   {|
 mutation($name: String!, $email: String!, $password: String!) {
   signUp(email: $email, email: $email, password: $password) @bsVariant {
@@ -210,7 +210,7 @@ For this reason, another function called `makeWithVariables` is _also_
 generated. This function takes a single `Js.t` object containing all variables.
 
 ```reason
-module MyQuery = [%graphql
+module MyQuery = [%graphql7
   {|
   mutation ($username: String!, $password: String!) {
     ...
@@ -236,7 +236,7 @@ where you can't use Reason/OCaml's type inference - use the `t` type of the quer
 module:
 
 ```reason
-module MyQuery = [%graphql {| { hero { name height }} |}];
+module MyQuery = [%graphql7 {| { hero { name height }} |}];
 
 /* This is something like Js.t({ . hero: Js.t({ name: string, weight: float }) }) */
 type resultType = MyQuery.t;
@@ -316,7 +316,7 @@ By default `graphql_ppx` uses `graphql_schema.json` file from your root director
 If you want to use multiple schemas in your project it can be provided as a secondary config argument in your graphql ppx definition.
 
 ```reason
-module MyQuery = [%graphql
+module MyQuery = [%graphql7
   {|
     query pokemon($id: String, $name: String) {
       pokemon(name: $name, id: $id) {

@@ -1,4 +1,4 @@
-module MyQuery = [%graphql
+module MyQuery = [%graphql7
   {|
   query ($query: String!) {
     argNamedQuery(query: $query)

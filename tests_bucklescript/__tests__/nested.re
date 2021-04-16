@@ -3,7 +3,7 @@ type record = {
   f2: string,
 };
 
-module MyQuery = [%graphql
+module MyQuery = [%graphql7
   {|
   {
     first: nestedObject {

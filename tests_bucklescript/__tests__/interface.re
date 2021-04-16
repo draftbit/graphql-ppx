@@ -1,4 +1,4 @@
-module QueryWithFragments = [%graphql
+module QueryWithFragments = [%graphql7
   {|
    query {
     users {
@@ -14,7 +14,7 @@ module QueryWithFragments = [%graphql
 |}
 ];
 
-module QueryWithoutFragments = [%graphql
+module QueryWithoutFragments = [%graphql7
   {|
    query {
     users {

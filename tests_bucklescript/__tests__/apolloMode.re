@@ -1,7 +1,7 @@
 open Jest;
 open Expect;
 
-module BasciQuery = [%graphql
+module BasciQuery = [%graphql7
   {|
   {
     first: nestedObject {
@@ -24,7 +24,7 @@ module BasciQuery = [%graphql
 |}
 ];
 
-module Subscription = [%graphql
+module Subscription = [%graphql7
   {|
   subscription {
     simpleSubscription {

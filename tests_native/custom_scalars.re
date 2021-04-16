@@ -1,6 +1,6 @@
 open Test_shared;
 
-module My_query = [%graphql
+module My_query = [%graphql7
   {|
   query ($opt: CustomScalar, $req: CustomScalar!) {
     customScalarField(argOptional: $opt, argRequired: $req) {

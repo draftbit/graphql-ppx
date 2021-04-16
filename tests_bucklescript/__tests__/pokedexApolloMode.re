@@ -1,7 +1,7 @@
 open Jest;
 open Expect;
 
-module MyQuery = [%graphql
+module MyQuery = [%graphql7
   {|
     {
       pokemon(name: "Pikachu") {

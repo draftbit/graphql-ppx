@@ -1,4 +1,4 @@
-module MyQuery = [%graphql
+module MyQuery = [%graphql7
   {|
   query ($var: Boolean!) {
     v1: variousScalars {

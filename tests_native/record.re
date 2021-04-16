@@ -46,7 +46,7 @@ let dog: module Alcotest.TESTABLE with type t = dog =
        a.name == b.name && a.barkVolume == b.barkVolume;
    });
 
-module MyQuery = [%graphql
+module MyQuery = [%graphql7
   {|
   {
     variousScalars @bsRecord {
@@ -76,7 +76,7 @@ let my_query: module Alcotest.TESTABLE with type t = qt =
        Alcotest.equal(scalars, a#variousScalars, b#variousScalars);
    });
 
-module ExternalFragmentQuery = [%graphql
+module ExternalFragmentQuery = [%graphql7
   {|
   fragment Fragment on VariousScalars @bsRecord {
     string
@@ -91,7 +91,7 @@ module ExternalFragmentQuery = [%graphql
 |}
 ];
 
-module InlineFragmentQuery = [%graphql
+module InlineFragmentQuery = [%graphql7
   {|
   {
     dogOrHuman {
@@ -132,7 +132,7 @@ let inline_fragment_query: module Alcotest.TESTABLE with type t = if_qt =
        };
    });
 
-module UnionExternalFragmentQuery = [%graphql
+module UnionExternalFragmentQuery = [%graphql7
   {|
   fragment DogFragment on Dog @bsRecord {
     name

@@ -1,6 +1,6 @@
 open Test_shared;
 
-module My_query = [%graphql
+module My_query = [%graphql7
   {|
   query ($query: String!) {
     argNamedQuery(query: $query)

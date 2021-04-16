@@ -1,4 +1,4 @@
-module My_query = [%graphql
+module My_query = [%graphql7
   {|
   {
     variousScalars {

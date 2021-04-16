@@ -1,4 +1,4 @@
-module QueryWithFragments = [%graphql
+module QueryWithFragments = [%graphql7
   {|
    query {
     users {
@@ -34,7 +34,7 @@ type user = [
 
 type only_user = [ | `User({. id: string})];
 
-module QueryWithoutFragments = [%graphql
+module QueryWithoutFragments = [%graphql7
   {|
    query {
     users {
