@@ -33,7 +33,7 @@ jobs:
           NUM_UNDERS=$(echo "$(($DESIRED_LEN-$HOME_ESY3_LEN))")
           UNDERS=$(printf "%-${NUM_UNDERS}s" "_")
           UNDERS="${UNDERS// /_}"
-          THE_ESY__CACHE_INSTALL_PATH=${HOME_ESY3}${UNDERS}/i  
+          THE_ESY__CACHE_INSTALL_PATH=${HOME_ESY3}${UNDERS}/i
           echo "THE_ESY__CACHE_INSTALL_PATH: $THE_ESY__CACHE_INSTALL_PATH"
           echo "##[set-output name=path;]$THE_ESY__CACHE_INSTALL_PATH"
       - name: Restore esy cache
@@ -74,7 +74,7 @@ jobs:
     strategy:
       matrix:
         node-version: [12.x]
-        os: [windows-2016, macOS-latest]
+        os: [macOS-latest]
 
     steps:
       - uses: actions/checkout@v1
@@ -101,7 +101,7 @@ jobs:
             NUM_UNDERS=$(echo "$(($DESIRED_LEN-$HOME_ESY3_LEN))")
             UNDERS=$(printf "%-${NUM_UNDERS}s" "_")
             UNDERS="${UNDERS// /_}"
-            THE_ESY__CACHE_INSTALL_PATH=${HOME_ESY3}${UNDERS}/i  
+            THE_ESY__CACHE_INSTALL_PATH=${HOME_ESY3}${UNDERS}/i
           fi
           echo "THE_ESY__CACHE_INSTALL_PATH: $THE_ESY__CACHE_INSTALL_PATH"
           echo "##[set-output name=path;]$THE_ESY__CACHE_INSTALL_PATH"
@@ -163,19 +163,11 @@ jobs:
           name: macOS-latest
           path: binaries/darwin
 
-      - name: Download windows artifacts
-        if: success()
-        uses: actions/download-artifact@master
-        with:
-          name: windows-2016
-          path: binaries/windows
-
       - name: Move artifacts
         if: success()
         run: |
           mkdir -p bin
           mv binaries/darwin/bin.exe bin/graphql_ppx-darwin-x64.exe
-          mv binaries/windows/bin.exe bin/graphql_ppx-win-x64.exe
           mv binaries/linux/bin.exe bin/graphql_ppx-linux-x64.exe
 
       - name: Publish
